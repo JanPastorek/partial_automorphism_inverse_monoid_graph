@@ -1,0 +1,85 @@
+
+import itertools
+from collections import defaultdict
+import networkx as nx
+
+
+def shared_neighbors(graph, v1, v2):
+    return len(list(nx.common_neighbors(graph, v1, v2)))
+
+
+def symmetric_difference_neighbors(graph, v1, v2):
+    neighbors_v1 = set(graph.neighbors(v1))
+    neighbors_v2 = set(graph.neighbors(v2))
+    
+    cdef int n1 = len(neighbors_v1)
+    cdef int n2 = len(neighbors_v2)
+    
+    cdef int n12 = shared_neighbors(graph, v1, v2)
+    
+    cdef int sigma = 0
+    if v1 in neighbors_v2:
+        sigma = 1
+    
+    return n1 + n2 - 2 * n12 - 2 * sigma
+
+
+def delta(graph):
+    cdef int n = len(graph)
+    cdef int sym_diff = n
+    cdef int v1, v2, delta_new
+    for v1 in graph.vertices():
+        for v2 in graph.vertices():
+            if v1 < v2:
+                delta_new = symmetric_difference_neighbors(graph, v1, v2)
+                if delta_new < sym_diff:
+                    sym_diff = delta_new
+    return sym_diff
+
+
+def avg_delta(graph):
+    cdef int n = len(graph)
+    cdef int sym_diff = 0
+    cdef int div = 0
+    cdef int v1, v2, delta_new
+    for v1 in graph.vertices():
+        for v2 in graph.vertices():
+            if v1 < v2:
+                delta_new = symmetric_difference_neighbors(graph, v1, v2)
+                sym_diff += delta_new
+                div += 1
+                
+    return sym_diff / float(div)
+
+
+def S_lower_bound(graph):
+    cdef int n = len(graph)
+    cdef int delta = n
+    cdef int v1, v2, delta_new
+    for v1 in graph.vertices():
+        for v2 in graph.vertices():
+            if v1 < v2:
+                delta_new = symmetric_difference_neighbors(graph, v1, v2)
+                if delta_new < delta:
+                    delta = delta_new
+    
+    print(delta)
+    return (n - delta) / n
+
+
+def regular_graph_depth(graph):
+    cdef int n = len(graph)
+    cdef int r = min(dict(graph.degree()).values())
+    
+    if r > n // 2:
+        r = n - r
+    return 2 * (r - 1)
+
+
+def symmetric_difference_neighbours_all_pairs(graph):
+    pairs = list(itertools.combinations(graph.vertices(), 2))
+    sym_diff = defaultdict(tuple)
+    cdef int v1, v2
+    for v1, v2 in pairs:
+        sym_diff[(v1, v2)] = symmetric_difference_neighbors(graph, v1, v2)
+    return sym_diff

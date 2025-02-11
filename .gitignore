@@ -1,0 +1,16 @@
+/.history
+/.tmp.driveupload
+/.tmp.drivedownload
+/experiments
+/gap_packages
+/env
+/all_graphs/graphs12.is6
+/all_graphs/graph11.is6
+/all_graphs/graphs10.g6
+/__pycache__
+/all_graphs/asymmetric/asym_graphs_inconsistent.db
+/all_graphs/benchmark/*
+/all_graphs/asymmetric/asym_graphs_inconsistent.db
+/all_graphs/graphs11.g6
+/partial_symmetries/experiments
+/partial_symmetries/gap_packages

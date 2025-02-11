@@ -1,0 +1,7 @@
+README.md
+setup.py
+partial_symmetries_graphs.egg-info/PKG-INFO
+partial_symmetries_graphs.egg-info/SOURCES.txt
+partial_symmetries_graphs.egg-info/dependency_links.txt
+partial_symmetries_graphs.egg-info/requires.txt
+partial_symmetries_graphs.egg-info/top_level.txt

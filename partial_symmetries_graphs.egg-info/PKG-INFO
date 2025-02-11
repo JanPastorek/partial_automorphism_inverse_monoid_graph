@@ -1,6 +1,0 @@
-Metadata-Version: 2.1
-Name: partial_symmetries_graphs
-Version: 0.1
-Requires-Dist: networkx
-Requires-Dist: matplotlib
-Requires-Dist: numpy

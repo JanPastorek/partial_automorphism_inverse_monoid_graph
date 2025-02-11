@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: partial_automorphisms_graphs
+Version: 0.1
+License-File: LICENSE
+Requires-Dist: networkx
+Requires-Dist: matplotlib
+Requires-Dist: numpy

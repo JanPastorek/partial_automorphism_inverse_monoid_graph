@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/partial_automorphisms_graphs/__init__.py
+src/partial_automorphisms_graphs/asymmetric_finder.py
+src/partial_automorphisms_graphs/cycle_notation.py
+src/partial_automorphisms_graphs/graph.py
+src/partial_automorphisms_graphs/isomorphism_class.py
+src/partial_automorphisms_graphs/partial_permutation.py
+src/partial_automorphisms_graphs/partial_symmetries.py
+src/partial_automorphisms_graphs/utils.py
+src/partial_automorphisms_graphs/w_l.py
+src/partial_automorphisms_graphs.egg-info/PKG-INFO
+src/partial_automorphisms_graphs.egg-info/SOURCES.txt
+src/partial_automorphisms_graphs.egg-info/dependency_links.txt
+src/partial_automorphisms_graphs.egg-info/requires.txt
+src/partial_automorphisms_graphs.egg-info/top_level.txt

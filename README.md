@@ -19,19 +19,19 @@ The repositoty provides code for analyzing and processing partial automorphisms 
 
 ## Directory Structure
 ```
-├── __init__.py
-├── __pycache__/
 ├── all_graphs/  
-├── data/
-├── asymmetric_finder.py
-├── cycle_notation.py
-├── graph.py
-├── main.ipynb
-├── isomorphism_class.py
-├── partial_permutation.py
-├── partial_symmetries.py
-├── utils.py
-└── w_l.py
+├── src/partial_automorphisms_graphs/
+	├── __init__.py
+	├── asymmetric_finder.py
+	├── cycle_notation.py
+	├── graph.py
+	├── main.ipynb
+	├── isomorphism_class.py
+	├── partial_permutation.py
+	├── partial_symmetries.py
+	├── utils.py
+	└── w_l.py
+└── setup.py
 ```
 
 ## Module Descriptions
